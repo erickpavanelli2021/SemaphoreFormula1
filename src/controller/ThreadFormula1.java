@@ -53,7 +53,9 @@ public class ThreadFormula1 extends Thread{
 		double menorTempo = 1000;
 		indice++;
 		
-		System.out.println("O Carro" +idCarro+ "da Escuderia" +idEscuderia+ "está ma pista");
+		System.out.println("============ ============== ============= ============= =============");
+		System.out.println("O Carro " +idCarro+ " da Escuderia " +idEscuderia+ " está ma pista");
+		System.out.println("============ ============== ============= ============= =============");
 		for (int volta = 0; volta < 3; volta++) {
 			double tempoInicial = System.nanoTime();
 			
@@ -71,11 +73,13 @@ public class ThreadFormula1 extends Thread{
 			double tempoTotal = tempoFinal - tempoInicial;
 			tempoTotal = tempoTotal / Math.pow(10, 9);
 			System.out.println("O carro " + idCarro + " da Escuderia " + idEscuderia + " marcou o tempo " + tempoTotal + " na volta " + volta);
+			System.out.println("============ ============== ============= ============= =============");
 			if (menorTempo > tempoTotal) {
 				menorTempo = tempoTotal;
 			}
 		}
-		System.out.println("melhor tempo do carro " + idCarro + ": " + menorTempo);
+		System.out.println("A escuderia: #" +idEscuderia+ " fez melhor tempo com o carro " + idCarro + ": " + menorTempo);
+		System.out.println("============ ============== ============= ============= =============");
 		tempos[indice] = menorTempo;
 		nmrCarro[indice] = idCarro;
 		nmrEscuderia[indice] = idEscuderia;
@@ -111,6 +115,7 @@ public class ThreadFormula1 extends Thread{
 			System.out.println("\n=========== GRID DE LARGADA =============\n");
 			for (int i=0 ; i<14 ; i++) {
 				System.out.println("#" + (i+1) + "|| Carro " + nmrCarro[i] + " || Escuderia " + nmrEscuderia[i] + " || Tempo: " + tempos[i]);
+				System.out.println("============ ============== ============= ============= =============");
 			
 		}
 	}
